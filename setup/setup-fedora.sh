@@ -35,6 +35,7 @@ packages=(
     "NetworkManager-tui"
     # Apps
     "waypaper"
+    "swww"
     "SwayNotificationCenter"
     # Fonts
     "fontawesome-fonts"
@@ -93,6 +94,7 @@ sudo dnf copr remove --assumeyes solopasha/hyprland
 sudo dnf copr enable --assumeyes sdegler/hyprland
 sudo dnf copr enable --assumeyes peterwu/rendezvous
 sudo dnf copr enable --assumeyes wef/cliphist
+sudo dnf copr enable --assumeyes wef/swww
 sudo dnf copr enable --assumeyes tofik/nwg-shell
 sudo dnf copr enable --assumeyes erikreider/SwayNotificationCenter
 
@@ -207,6 +209,12 @@ source $SCRIPT_DIR/_fonts.sh
 # --------------------------------------------------------------
 
 source $SCRIPT_DIR/_icons.sh
+
+# --------------------------------------------------------------
+# Create XDG Directories
+# --------------------------------------------------------------
+
+xdg-user-dirs-update
 
 # --------------------------------------------------------------
 # Finish
