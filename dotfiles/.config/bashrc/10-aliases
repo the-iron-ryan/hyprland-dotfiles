@@ -58,8 +58,7 @@ alias ascii='~/.config/ml4w/scripts/figlet.sh'
 # -----------------------------------------------------
 # System
 # -----------------------------------------------------
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-
+alias update-grub='/usr/bin/update-grub-hotkeys'
 
 # -----------------------------------------------------
 # Package management
