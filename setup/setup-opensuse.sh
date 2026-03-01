@@ -31,10 +31,20 @@ packages=(
     "ImageMagick"
     "NetworkManager-connection-editor"
     "NetworkManager-tui"
+    "tesseract-ocr-traineddata-eng"
     # Apps
     "SwayNotificationCenter"
     # Fonts
     "fontawesome-fonts"
+    # Display Manager
+    "sddm-qt6"
+    "libQt6Svg6"
+    "qt6-virtualkeyboard"
+    "qt6-virtualkeyboard-imports"
+    "qt6-multimedia"
+    "qt6-multimedia-imports"
+    # System
+    "gvfs-backend"
 )
 
 _isInstalled() {
@@ -142,6 +152,13 @@ sudo zypper -n install eza
 
 sudo zypper addrepo https://download.opensuse.org/repositories/X11:Wayland/openSUSE_Tumbleweed/X11:Wayland.repo
 sudo zypper -n install swww
+
+# --------------------------------------------------------------
+# JetBrains Mono Nerd Font
+# --------------------------------------------------------------
+
+sudo zypper addrepo https://download.opensuse.org/repositories/X11:fonts/openSUSE_Factory/X11:fonts.repo
+sudo zypper -n install jetbrainsmono-nerd-fonts
 
 # --------------------------------------------------------------
 # Install waypaper dependencies before using pip

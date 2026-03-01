@@ -47,11 +47,19 @@ packages=(
     # Tools
     "eza"
     "python-pywalfox"
+    "tesseract-data-eng"
     # Fonts
     "otf-font-awesome"
     "ttf-firacode-nerd"
+    "ttf-jetbrains-mono-nerd"
     "tty-clock"
+    # Display Manager
     "swww"
+    "qt6-svg"
+    "qt6-virtualkeyboard"
+    "qt6-multimedia-ffmpeg"
+    # System
+    "gvfs-mtp"
 )
 
 _isInstalled() {
