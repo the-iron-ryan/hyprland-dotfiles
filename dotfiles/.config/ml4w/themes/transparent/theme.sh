@@ -2,7 +2,7 @@
 # ML4W Theme Glass
 
 # Set waybar
-echo "/ml4w-glass;/ml4w-transparent/default" > $HOME/.config/ml4w/settings/waybar-theme.sh
+echo "/ml4w-transparent-centered;/ml4w-transparent-centered/default" > $HOME/.config/ml4w/settings/waybar-theme.sh
 $HOME/.config/waybar/launch.sh &
 
 # Set nwg-dock-hyprland
@@ -12,9 +12,6 @@ $HOME/.config/nwg-dock-hyprland/launch.sh &
 # Set swaync
 echo '@import "themes/glass/style.css";' > $HOME/.config/swaync/style.css
 swaync-client -rs
-
-# Set wlogout
-echo '@import "themes/transparent/style.css";' > $HOME/.config/wlogout/style.css
 
 # Set launcher
 echo 'rofi' > $HOME/.config/ml4w/settings/launcher

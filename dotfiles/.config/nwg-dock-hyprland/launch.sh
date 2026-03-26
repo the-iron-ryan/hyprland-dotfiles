@@ -10,5 +10,6 @@ if [ ! -f $HOME/.config/ml4w/settings/dock-disabled ]; then
     sleep 0.5
     nwg-dock-hyprland -i 32 -w 5 -mb 10 -x -s style.css -c "$HOME/.config/hypr/scripts/launcher.sh"
 else
+    killall nwg-dock-hyprland
     echo ":: Dock disabled"
 fi

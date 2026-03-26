@@ -9,6 +9,14 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
 
 # --------------------------------------------------------------
+# ML4W Settings App
+# --------------------------------------------------------------
+
+bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/ml4w-dotfiles-settings/main/setup.sh)
+rm $HOME/.local/share/ml4w-dotfiles-settings/quickshell/shared/Theme.qml  
+ln -sf $HOME/.config/quickshell/shared/Theme.qml $HOME/.local/share/ml4w-dotfiles-settings/quickshell/shared/Theme.qml
+
+# --------------------------------------------------------------
 # Prebuild Packages
 # --------------------------------------------------------------
 
@@ -23,7 +31,6 @@ sudo cp $SCRIPT_DIR/packages/eza /usr/bin
 # --------------------------------------------------------------
 
 echo ":: Installing packages with pip"
-sudo pip install hyprshade
 sudo pip install pywalfox
 sudo pip install screeninfo
 sudo pip install waypaper
@@ -38,18 +45,6 @@ sudo pip install waypaper
 # make
 # chmod +x tty-clock
 # sudo mv tty-clock /usr/local/bin/tty-clock
-
-# --------------------------------------------------------------
-# ML4W Apps
-# --------------------------------------------------------------
-
-source $SCRIPT_DIR/_ml4w-apps.sh
-
-# --------------------------------------------------------------
-# Flatpaks
-# --------------------------------------------------------------
-
-source $SCRIPT_DIR/_flatpaks.sh
 
 # --------------------------------------------------------------
 # Grimblast
@@ -74,6 +69,12 @@ source $SCRIPT_DIR/_fonts.sh
 # --------------------------------------------------------------
 
 source $SCRIPT_DIR/_icons.sh
+
+# --------------------------------------------------------------
+# Migrate
+# --------------------------------------------------------------
+
+source $SCRIPT_DIR/migrate.sh
 
 # --------------------------------------------------------------
 # Create XDG Directories
