@@ -59,9 +59,9 @@
     // Cliphist
     "custom/cliphist": {
         "format": "",
-        "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/ml4w-cliphist",
-        "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/ml4w-cliphist d",
-        "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/ml4w-cliphist w",
+        "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
+        "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
+        "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
         "tooltip": false
     },
 
@@ -83,9 +83,9 @@
         "tooltip-format": "{}",
         "escape": true,
         "return-type": "json",
-        "exec": "~/.config/ml4w/scripts/ml4w-check-system-updates",
+        "exec": "~/.config/ml4w/scripts/updates.sh",
         "restart-interval": 60,
-        "on-click": "~/.config/ml4w/settings/installupdates.sh",
+        "on-click": "alacritty -e ~/.config/ml4w/scripts/installupdates.sh",
         "tooltip": false
     },
 

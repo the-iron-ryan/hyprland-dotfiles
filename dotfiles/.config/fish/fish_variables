@@ -1,9 +1,10 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export OLLAMA_API_KEY:ollama\x2dlocal
 SETUVAR __fish_initialized:4300
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_greeting:
-SETUVAR fish_user_paths:/usr/lib/ccache/bin/\x20\x7e/\x2ecargo/bin/\x1e\x7e/\x2elocal/bin/
+SETUVAR fish_user_paths:/home/the\x2diron\x2dryan/\x2enpm\x2dglobal/bin\x1e/usr/lib/ccache/bin/\x20\x7e/\x2ecargo/bin/\x1e\x7e/\x2elocal/bin/
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute

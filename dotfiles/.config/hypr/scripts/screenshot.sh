@@ -22,11 +22,6 @@ SAVE_FILENAME=$(cat ~/.config/ml4w/settings/screenshot-filename)
 eval screenshot_folder="$SAVE_DIR"
 eval NAME="$SAVE_FILENAME"
 
-# Notifications
-source "$HOME/.config/ml4w/scripts/ml4w-notification-handler"
-APP_NAME="Screen Capture"
-NOTIFICATION_ICON="camera-photo-symbolic"
-
 # Screenshot Editor
 export GRIMBLAST_EDITOR="$(cat ~/.config/ml4w/settings/screenshot-editor)"
 
@@ -38,13 +33,7 @@ export GRIMBLAST_EDITOR="$(cat ~/.config/ml4w/settings/screenshot-editor)"
 
 # Quick instant mode: full screen
 take_instant_full() {
-    grim "$NAME" && notify_user \
-        --a "${APP_NAME}" \
-        --i "${NOTIFICATION_ICON}" \
-        --s "Screenshot saved" \
-        --m "$screenshot_folder/$NAME" \
-        --t 1000
-
+    grim "$NAME" && notify-send -t 1000 "Screenshot saved to $screenshot_folder/$NAME"
     [[ -f "$HOME/$NAME" && -d "$screenshot_folder" && -w "$screenshot_folder" ]] && mv "$HOME/$NAME" "$screenshot_folder/"
 }
 
@@ -67,12 +56,7 @@ take_instant_area() {
     trap - EXIT
 
     # capture and notify
-    grim -g "$region" "$NAME" && notify_user \
-        --a "${APP_NAME}" \
-        --i "${NOTIFICATION_ICON}" \
-        --s "Screenshot saved" \
-        --m "$screenshot_folder/$NAME" \
-        --t 1000
+    grim -g "$region" "$NAME" && notify-send -t 1000 "Screenshot saved to $screenshot_folder/$NAME"
     [[ -f "$HOME/$NAME" && -d "$screenshot_folder" && -w "$screenshot_folder" ]] && mv "$HOME/$NAME" "$screenshot_folder/"
 }
 
@@ -219,23 +203,13 @@ copy_save_editor_run() {
 
 timer() {
     if [[ $countdown -gt 10 ]]; then
-        notify_user \
-            --a "${APP_NAME}" \
-            --i "${NOTIFICATION_ICON}" \
-            --s "Taking screenshot in ${countdown} seconds" \
-            --m "" \
-            --t 1000
+        notify-send -t 1000 "Taking screenshot in ${countdown} seconds"
         countdown_less_10=$((countdown - 10))
         sleep $countdown_less_10
         countdown=10
     fi
     while [[ $countdown -ne 0 ]]; do
-        notify_user \
-            --a "${APP_NAME}" \
-            --i "${NOTIFICATION_ICON}" \
-            --s "Taking screenshot in ${countdown} seconds" \
-            --m "" \
-            --t 1000
+        notify-send -t 1000 "Taking screenshot in ${countdown} seconds"
         countdown=$((countdown - 1))
         sleep 1
     done
